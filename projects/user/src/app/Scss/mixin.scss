@@ -1,0 +1,67 @@
+@use './variabel.scss' as *;
+
+@mixin breakpoint($size) {
+  @if $size == "mobile" {
+    @media ($max-width-mobile) {
+      @content;
+    }
+  }@else if $size == "samll" {
+    @media (($min-width-small) and ($max-width-small)) {
+      @content;
+    }
+  }@else if $size == "medium" {
+    @media (($min-width-medium) and ($max-width-medium)) {
+      @content;
+    }
+  }@else if $size == "large" {
+    @media ($max-width-large) {
+      @content;
+    }
+  }
+}
+
+@mixin flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin circle($size) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+}
+
+
+@mixin logicon($color ,$border) {
+  position: relative;
+  @include circle(2.5rem);
+  background-color: $color;
+  margin-right: 0.5rem;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    @include circle(1.3rem);
+    background-color: $color;
+    border: 0.2rem solid $border;
+  }
+}
+
+@mixin listStyle ($color , $size , $weight , $padding) {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+  a {
+    display: block;
+    text-decoration: none;
+    color: $color;
+    padding: $padding 0rem;
+    font: {
+      size:$size;
+      weight:$weight;
+    }
+  }
+}
