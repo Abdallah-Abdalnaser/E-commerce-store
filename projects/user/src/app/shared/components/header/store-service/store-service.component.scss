@@ -1,0 +1,25 @@
+@use '../../../../Scss/mixin.scss' as *;
+@use '../../../../Scss/variabel.scss' as *;
+
+nav {
+  @include flex;
+  justify-content: space-between;
+  .service {
+    @include flex;
+    justify-content: flex-start;
+    font-size: 0.94rem;
+    .category {
+      span {
+        fa-icon {}
+      }
+    }
+    a {
+      display: block;
+      color: $gray2;
+      text-decoration: none;
+      padding: 15px;
+      fa-icon {}
+    }
+  }
+  .phonenumber {}
+}
