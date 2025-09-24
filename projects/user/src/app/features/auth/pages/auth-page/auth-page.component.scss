@@ -1,0 +1,63 @@
+@use '../../../../Scss/variabel.scss' as *;
+
+section {
+  box-shadow: 0px 0px 8px#ccc;
+  width: fit-content;
+  border: 1px solid $gray3;
+  .row:first-of-type {
+    border-bottom: 2px solid $gray3;
+    color: $gray4;
+    .col-md-6 {
+      padding: 3px 1rem;
+      &.active {
+        color: $orange;
+        border-bottom: 3px solid $orange;
+        padding-bottom: 8px;
+      }
+      span {
+        font-weight: 600;
+      }
+    }
+  }
+  .row:last-of-type {
+    position: relative;
+    &:before {
+      content: '';
+      position: absolute;
+      padding: 0px;
+      top: -1.3rem;
+      left: 20px;
+      width: calc(100% - 40px);
+      height: 2px;
+      background-color: $gray3;
+    }
+    &::after {
+      content: 'or';
+      position: absolute;
+      padding: 0px;
+      top: -2.1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: fit-content;
+      color: $gray4;
+      font-weight: 500;
+      padding: 0px 1rem;
+      background-color: $white;
+    }
+  }
+  a {
+    border: 2px solid $gray3;
+    color: $black;
+    background-color: white;
+    font-weight: 500;
+    text-decoration: none;
+    img {
+      vertical-align: middle;
+      padding: 0px 0.5rem;
+    }
+    span {
+      position: relative;
+      left: 4rem;
+    }
+  }
+}

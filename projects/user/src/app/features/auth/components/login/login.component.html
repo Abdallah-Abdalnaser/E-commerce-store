@@ -1,0 +1,20 @@
+<form [formGroup]="loginForm" (ngSubmit)="onsubmit()">
+  <div class="form-group mt-3">
+    <label for="username" class="form-label mb-1">Email</label>
+    <input id="username" formControlName="email" type="text" class="form-control" />
+  </div>
+
+  <div class="form-group mt-3">
+    <label for="password" class="form-label mb-1">
+      Password
+      <a href="#">Forget Password</a>
+    </label>
+    <fa-icon [icon]="(showPassword)?faEyeSlash:faEye" (click)="showPasswordtoggle()"></fa-icon>
+    <input id="password" formControlName="password" [type]="(showPassword)?'text':'password'" class="form-control" />
+  </div>
+  <button type="submit" class="">
+    {{'Sign in' | uppercase }}
+    <fa-icon [icon]="faArrowRight"></fa-icon>
+  </button>
+
+</form>

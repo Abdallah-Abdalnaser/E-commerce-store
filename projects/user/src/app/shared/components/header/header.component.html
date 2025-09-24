@@ -31,19 +31,21 @@
       </figure>
       <form>
         <input type="search" name="search" placeholder="Search for anything...">
-        <fa-icon [icon]="faSearch"></fa-icon>
+        <fa-icon [icon]="faSearch" routerLink="/products"></fa-icon>
       </form>
       <div class="shoppinginfo">
         <div class="shoppingCart">
           <fa-icon [icon]="faCartShopping"></fa-icon>
-          <span>5</span>
+          <!-- <span>5</span> -->
+          <!-- <app-cart-list></app-cart-list> -->
         </div>
         <div class="favourit">
           <fa-icon [icon]="faHeart"></fa-icon>
           <span>3</span>
         </div>
         <div class="user">
-          <fa-icon [icon]="faUser"></fa-icon>
+          <fa-icon [icon]="faUser" (click)="showForm()"></fa-icon>
+          <app-loginform *ngIf="show"></app-loginform>
         </div>
       </div>
     </div>

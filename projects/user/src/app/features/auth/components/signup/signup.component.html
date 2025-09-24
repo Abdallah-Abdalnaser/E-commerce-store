@@ -1,0 +1,48 @@
+<form [formGroup]="signupForm" (ngSubmit)="onsubmit()">
+  <div class="form-group mt-3">
+    <label for="username" class="form-label mb-1">Name</label>
+    <input id="username" formControlName="name" type="text" class="form-control" />
+  </div>
+  @if (getcontrolName('name')?.invalid && getcontrolName('name')?.touched) {
+    <small class="text-danger fw-bold">*The Field Is Required</small>
+  }
+
+  <div class="form-group mt-3">
+    <label for="username" class="form-label mb-1">Email</label>
+    <input id="username" formControlName="email" type="text" class="form-control" />
+  </div>
+  @if (getcontrolName('email')?.touched && getcontrolName('email')?.pristine) {
+    <small class="text-danger fw-bold">*The Field Is Required</small>
+  } @else if (getcontrolName('email')?.invalid && getcontrolName('email')?.touched) {
+    <small class="text-danger fw-bold">*The Email Is Invalid</small>
+  }
+  <div class="form-group mt-3">
+    <label for="password" class="form-label mb-1">
+      Password
+    </label>
+    <fa-icon [icon]="(showPassword)?faEyeSlash:faEye" (click)="showPasswordtoggle()"></fa-icon>
+    <input id="password" formControlName="password" [type]="(showPassword)?'text':'password'" class="form-control" />
+  </div>
+  @if (getcontrolName('password')?.invalid && getcontrolName('password')?.touched) {
+    <small class="text-danger fw-bold">*The Field Is Required</small>
+  }
+  @else if (getcontrolName('password')?.errors?.['expretion']) {
+    <small class="text-danger fw-bold">*Password does not meet the required strength</small>
+  }
+
+  <div class="form-group mt-3">
+    <label for="confirmpassword" class="form-label mb-1">
+      Confirm Password
+    </label>
+    <fa-icon [icon]="(showconfirmPassword)?faEyeSlash:faEye" (click)="showconfirmPasswordtoggle()"></fa-icon>
+    <input id="confirmpassword" formControlName="ConfirmPassword" [type]="(showconfirmPassword)?'text':'password'" class="form-control" />
+  </div>
+  @if (getcontrolName('ConfirmPassword')?.invalid && getcontrolName('ConfirmPassword')?.touched) {
+    <small class="text-danger fw-bold">*The Field Is Required</small>
+  }
+  <button type="submit" class="">
+    {{'Sign up' | uppercase}}
+    <fa-icon [icon]="faArrowRight"></fa-icon>
+  </button>
+
+</form>

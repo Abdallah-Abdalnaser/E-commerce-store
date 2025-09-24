@@ -1,0 +1,31 @@
+@use '../../../Scss/variabel.scss' as *;
+
+section {
+  background-color: $gray3;
+  color: gray;
+  .container {
+    ul {
+      margin: 0px;
+      padding: 0px;
+      li {
+        display: inline;
+        font-weight: 600;
+        list-style: none;
+        &:not(:last-child)::after {
+          content: '>';
+          padding: 0px 5px;
+        }
+
+        a {
+          text-decoration: none;
+          color: $gray2;
+        }
+        &:last-of-type {
+          a {
+            color: $light-blue;
+          }
+        }
+      }
+    }
+  }
+}

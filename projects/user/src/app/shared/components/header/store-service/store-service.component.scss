@@ -4,13 +4,40 @@
 nav {
   @include flex;
   justify-content: space-between;
+  padding: 8px 0px;
   .service {
     @include flex;
     justify-content: flex-start;
-    font-size: 0.94rem;
+    font-size: 0.80rem;
+    @include breakpoint("mobile") {
+      font-size: 0.55rem;
+    }
     .category {
+      position: relative;
       span {
-        fa-icon {}
+        background-color:$gray3;
+        padding: 12px 29px;
+        color: $black2;
+        font-weight: 500;
+        transition: 0.3s;
+        @include breakpoint("mobile") {
+          padding: 12px;
+        }
+        fa-icon {
+          margin-left: 0.3rem;
+          font-size: 0.7rem;
+        }
+        &:hover {
+          background-color: $orange;
+          cursor:pointer;
+          color: $white;
+        }
+      }
+      app-catigories-list {
+        position: absolute;
+        left: 0;
+        top: 186%;
+        z-index: 9999;
       }
     }
     a {
@@ -18,8 +45,29 @@ nav {
       color: $gray2;
       text-decoration: none;
       padding: 15px;
-      fa-icon {}
+      transition: 0.3s;
+      @include breakpoint ("samll") {
+        padding: 15px 6px;
+      }
+      @include breakpoint ("mobile") {
+        padding: 15px 6px;
+      }
+      &:hover {
+        color: $orange;
+      }
+      fa-icon {
+      }
     }
   }
-  .phonenumber {}
+  .phonenumber {
+    @include breakpoint("samll"){
+      font-size: 0.8rem;
+    }
+    @include breakpoint("mobile"){
+      display: none;
+    }
+    span {
+      fa-icon{ }
+    }
+  }
 }

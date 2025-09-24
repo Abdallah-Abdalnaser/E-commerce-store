@@ -1,0 +1,25 @@
+<form>
+  <h4>Sign in to your account</h4>
+  <section>
+    <label for="email">Email Address</label>
+    <input type="email" name="email" id="email">
+  </section>
+  <section>
+    <label for="password">
+      <span>password</span>
+      <a href="http://">Forget Password</a>
+    </label>
+    <input type="password" name="password" id="password">
+  </section>
+  <button type="submit">
+    LOGIN
+    <fa-icon [icon]="faArrowRight"></fa-icon>
+  </button>
+  <div id="message">
+    <div></div>
+    <p>Don't have account</p>
+  </div>
+  <button type="button" routerLink="/Auth">
+    {{"create Account" | uppercase}}
+  </button>
+</form>

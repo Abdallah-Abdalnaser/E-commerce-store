@@ -1,0 +1,37 @@
+@use '../../../../Scss/variabel.scss' as *;
+
+button {
+  width: 100%;
+  border: 0px;
+  color: $white;
+  background-color: $orange;
+  margin: 1rem 0px;
+  padding: 0.3rem
+}
+
+label {
+  width: 100%;
+  font: {
+    weight: 600;
+    size: small;
+  }
+  a {
+    float: right;
+    text-decoration: none;
+    color: $light-blue;
+  }
+}
+.form-group {
+  position: relative;
+  fa-icon {
+    position: absolute;
+    right: 1rem ;
+    bottom: 0.4rem;
+    cursor: pointer;
+  }
+}
+
+button {
+  font-weight: 500;
+  font-size: 0.9rem;
+}

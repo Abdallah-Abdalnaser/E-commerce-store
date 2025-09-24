@@ -1,0 +1,21 @@
+@use "../../../../../Scss/mixin.scss" as *;
+@use "../../../../../Scss/variabel.scss" as *;
+
+ul {
+  @include listStyle($gray2 , 0.8rem , 300 , 0.5rem);
+  background-color: white;
+  box-shadow: 0rem 0rem 3.2rem #00000024;
+  padding:0.2rem 0.8rem;
+  li {
+    min-width: 10rem;
+    max-width: 10rem;
+    // padding: 0.5rem;
+    a {
+      font-weight: 400;
+      transition: 0.3s;
+      &:hover {
+        color: $orange;
+      }
+    }
+  }
+}

@@ -12,4 +12,18 @@ export class StoreServiceComponent {
   faHeadset:IconDefinition=faHeadset;
   faInfoCircle:IconDefinition=faInfoCircle;
   faPhoneAlt:IconDefinition=faPhoneAlt;
+  catigoryList:boolean=false;
+
+
+  openList() {
+    this.catigoryList = !this.catigoryList;
+  }
+
+  catigoryListClick():string {
+    if (this.catigoryList === true) {
+      return "$orange"
+    }else {
+      return "$gray3"
+    }
+  }
 }

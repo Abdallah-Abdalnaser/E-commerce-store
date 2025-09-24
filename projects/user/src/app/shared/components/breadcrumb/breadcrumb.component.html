@@ -1,0 +1,9 @@
+<section class="">
+  <div class="container px-4 py-3" >
+    <ul>
+      <li *ngFor="let breadcrumb  of breadcrumbs ">
+        <a [href]='breadcrumb.url'>{{breadcrumb.label}}</a>
+      </li>
+    </ul>
+  </div>
+</section>

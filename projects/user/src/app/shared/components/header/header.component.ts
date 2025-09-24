@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { faTwitter, faFacebookF, faPinterestP, faRedditAlien, faYoutube, faInstagram ,IconDefinition } from '@fortawesome/free-brands-svg-icons';
 import { faSearch , faCartShopping , faHeart , faUser} from '@fortawesome/free-solid-svg-icons';
 
@@ -8,7 +8,7 @@ import { faSearch , faCartShopping , faHeart , faUser} from '@fortawesome/free-s
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
   faTwitter:IconDefinition = faTwitter;
   faFacebookF:IconDefinition = faFacebookF;
   faPinterestP:IconDefinition = faPinterestP;
@@ -19,4 +19,13 @@ export class HeaderComponent {
   faCartShopping:IconDefinition = faCartShopping;
   faHeart:IconDefinition = faHeart;
   faUser:IconDefinition = faUser;
+  show:boolean = false;
+
+  constructor() { }
+  ngOnInit(): void {
+  }
+
+  showForm():void {
+    this.show = !this.show;
+  }
 }
